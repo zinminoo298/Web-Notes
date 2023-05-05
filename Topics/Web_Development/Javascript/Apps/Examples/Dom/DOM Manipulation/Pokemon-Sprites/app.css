@@ -1,0 +1,8 @@
+.poke-slot {
+    display: inline-block;
+    text-align: center;
+}
+
+.poke-slot img {
+    display: block;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Product</title>
+  </head>
+  <body>
+    <h1><%= farm.name %></h1>
+    <h3>Add a new product</h3>
+    <form action="/farms/<%= farm.id %>/products" method="post">
+      <label for="name">Product Name:</label>
+      <input type="text" name="name" id="name" placeholder="Product name" />
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price" placeholder="Price" />
+      <label for="category">Select Category</label>
+      <select name="category" id="category">
+        <% for (let tag of categories) {%>
+        <option value="<%= tag %>"><%= tag %></option>
+        <% } %>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+    <a href="/farms/<%= farm.id %> "><button>Back To Farm</button></a>
+  </body>
+</html>

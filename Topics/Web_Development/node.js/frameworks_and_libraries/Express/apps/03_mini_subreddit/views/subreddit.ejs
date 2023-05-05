@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <script src="/js/javascript.min.js"></script>
+  <title>
+    <%= name %>
+  </title>
+</head>
+
+<body>
+  <main class="container mt-5">
+    <div class="row g-0">
+      <div class="col-4">
+        <div class="card border-end-0 rounded-0">
+          <div class="card-header">Total <%= subscribers %> subscribers</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= name %>
+            </h5>
+            <p class="card-text">
+              <%= description %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <article>
+          <% for(let post of posts){ %>
+            <div class="card mb-2">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= post.author %>
+                </h5>
+                <p class="card-text">
+                  <%= post.title %>
+                </p>
+              </div>
+              <% if(post.img) { %>
+                <img src="<%= post.img %>" class="card-img-top" alt="..." />
+                <% } %>
+            </div>
+            <% } %>
+        </article>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
